@@ -29,14 +29,13 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	annotationProcessor "com.querydsl:querydsl-apt:${queryDslVersion}:jpa"
-//	annotationProcessor "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final"
 	annotationProcessor "javax.annotation:javax.annotation-api:1.3.2"
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-//	implementation "com.querydsl:querydsl-core:${queryDslVersion}"
 	implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
 
+	implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.0.0'
 }
 
 test {

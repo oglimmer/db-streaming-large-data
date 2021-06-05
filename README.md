@@ -15,14 +15,22 @@ Start server:
 Fill DB with data:
 
 ```
-curl http://localhost:8080 -X POST -d '5500' -H 'Content-Type: application/json'
+./import 1 # this creates 100 person
+
+#or
+
+./import 5500 # this creates 550,000 persons (takes ~30 mins on my machine)
 ```
 
 Query the data:
 
 (at this point in time you might want to use -Xmx256M)
 
-```
+``` 
+curl http://localhost:8080/plain-direct-poi # better do this from a browser 
+
+# or
+
 curl http://localhost:8080/plain-direct
 
 # or

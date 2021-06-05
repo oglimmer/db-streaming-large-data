@@ -1,4 +1,4 @@
-package de.oglimmer.streamquerydsl;
+package de.oglimmer.streamquerydsl.db;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;

@@ -1,7 +1,8 @@
-package de.oglimmer.streamquerydsl;
+package de.oglimmer.streamquerydsl.db;
 
 import com.querydsl.core.types.dsl.StringExpression;
 import com.querydsl.core.types.dsl.StringPath;
+import de.oglimmer.streamquerydsl.db.QPerson;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;

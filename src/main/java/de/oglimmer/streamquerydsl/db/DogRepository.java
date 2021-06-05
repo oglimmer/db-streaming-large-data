@@ -1,4 +1,4 @@
-package de.oglimmer.streamquerydsl;
+package de.oglimmer.streamquerydsl.db;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,5 +1,9 @@
-package de.oglimmer.streamquerydsl;
+package de.oglimmer.streamquerydsl.service;
 
+import de.oglimmer.streamquerydsl.db.Dog;
+import de.oglimmer.streamquerydsl.db.DogRepository;
+import de.oglimmer.streamquerydsl.db.Person;
+import de.oglimmer.streamquerydsl.db.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
