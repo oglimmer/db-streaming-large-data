@@ -37,6 +37,10 @@ public class QueryController {
     public static final String ATTACHMENT_FILENAME_DOWNLOAD_XLSX = "attachment; filename=\"download.xlsx\"";
     public static final String ATTACHMENT_FILENAME_DOWNLOAD_CSV = "attachment; filename=\"download.csv\"";
     public static final int EXCEL_MAX_ROWS = 1048575;
+    public static final String SQL_GET_ALL_PERSONS_WITH_DOGS = "select * from person join dog on person" +
+            ".id=dog.owner_id";
+    public static final String SQL_GET_COUNT_OF_ALL_PERSONS_WITH_DOGS = "select count(*) from person join dog on " +
+            "person.id=dog.owner_id";
 
     @Autowired
     private DataSource dataSource;
@@ -53,8 +57,7 @@ public class QueryController {
 
                 long startTime = System.currentTimeMillis();
                 try (final Writer writer = new BufferedWriter(new FileWriter(tempFile))) {
-                    try (final ResultSet resultSet = statement.executeQuery("select * from person join dog on person" +
-                            ".id=dog.owner_id")) {
+                    try (final ResultSet resultSet = statement.executeQuery(SQL_GET_ALL_PERSONS_WITH_DOGS)) {
                         while (resultSet.next()) {
                             writer.append(resultSet.getString("firstname") + "," + resultSet.getString("name") + "," + resultSet.getString("note") + "\r\n");
                         }
@@ -119,8 +122,7 @@ public class QueryController {
                     Sheet s = wb.createSheet();
                     int rownum = 0;
                     long startTime = System.currentTimeMillis();
-                    try (final ResultSet resultSet = statement.executeQuery("select * from person join dog on person" +
-                            ".id=dog.owner_id")) {
+                    try (final ResultSet resultSet = statement.executeQuery(SQL_GET_ALL_PERSONS_WITH_DOGS)) {
                         while (resultSet.next()) {
                             if (rownum > EXCEL_MAX_ROWS) {
                                 break;
@@ -157,8 +159,7 @@ public class QueryController {
         }
 
         long startTime = System.currentTimeMillis();
-        try (final ResultSet resultSet = statement.executeQuery("select * from person join dog on person" +
-                ".id=dog.owner_id")) {
+        try (final ResultSet resultSet = statement.executeQuery(SQL_GET_ALL_PERSONS_WITH_DOGS)) {
             try (final ServletOutputStream outputStream = response.getOutputStream()) {
                 while (resultSet.next()) {
                     String str =
@@ -173,8 +174,7 @@ public class QueryController {
     private int getTotalRows(Statement statement) throws SQLException {
         int totalRows;
         long startTime = System.currentTimeMillis();
-        try (final ResultSet resultSet = statement.executeQuery("select count(*) from person join dog on " +
-                "person.id=dog.owner_id")) {
+        try (final ResultSet resultSet = statement.executeQuery(SQL_GET_COUNT_OF_ALL_PERSONS_WITH_DOGS)) {
             resultSet.next();
             totalRows = resultSet.getInt(1);
         }
