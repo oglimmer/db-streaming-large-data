@@ -15,11 +15,11 @@ Start server:
 Fill DB with data:
 
 ```
-./import 1 # this creates 100 person
+./import.sh 1 # this creates 100 person
 
 #or
 
-./import 5500 # this creates 550,000 persons (takes ~30 mins on my machine)
+./import.sh 5500 # this creates 550,000 persons (takes ~30 mins on my machine)
 ```
 
 Query the data:
