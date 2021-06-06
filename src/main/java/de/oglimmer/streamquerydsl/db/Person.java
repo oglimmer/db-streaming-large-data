@@ -1,6 +1,5 @@
 package de.oglimmer.streamquerydsl.db;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,7 +26,6 @@ public class Person {
     private String note;
 
     @OneToMany(mappedBy = "owner")
-    @JsonManagedReference
     private Set<Dog> dogs;
 
 }

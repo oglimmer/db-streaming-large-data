@@ -1,6 +1,5 @@
 package de.oglimmer.streamquerydsl.db;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +25,6 @@ public class Dog {
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
-    @JsonBackReference
     private Person owner;
 
 }
