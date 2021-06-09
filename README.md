@@ -43,5 +43,13 @@ curl http://localhost:8080/template
 
 # or
 
+curl http://localhost:8080/jpa
+
+# or
+
+curl http://localhost:8080/jpa-criteria
+
+# or
+
 curl http://localhost:8080/dsl
 ```
