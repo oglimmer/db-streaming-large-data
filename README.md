@@ -24,7 +24,7 @@ Fill DB with data:
 
 Query the data:
 
-(at this point in time you might want to use -Xmx256M)
+(at this point in time you might want to use -Xmx256M or less)
 
 ``` 
 curl http://localhost:8080/plain-direct-poi # better do this from a browser 
@@ -36,6 +36,10 @@ curl http://localhost:8080/plain-direct
 # or
 
 curl http://localhost:8080/plain-file
+
+# or
+
+curl http://localhost:8080/template
 
 # or
 
