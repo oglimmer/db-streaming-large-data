@@ -15,24 +15,24 @@ import java.util.Random;
 @Service
 public class CreationService {
 
-    private final String[] BEGINNING = {"Kr", "Ca", "Ra", "Mrok", "Cru",
+    private static final String[] BEGINNING = {"Kr", "Ca", "Ra", "Mrok", "Cru",
             "Ray", "Bre", "Zed", "Drak", "Mor", "Jag", "Mer", "Jar", "Mjol",
             "Zork", "Mad", "Cry", "Zur", "Creo", "Azak", "Azur", "Rei", "Cro",
             "Mar", "Luk"};
-    private final String[] MIDDLE = {"air", "ir", "mi", "sor", "mee", "clo",
+    private static final String[] MIDDLE = {"air", "ir", "mi", "sor", "mee", "clo",
             "red", "cra", "ark", "arc", "miri", "lori", "cres", "mur", "zer",
             "marac", "zoir", "slamar", "salmar", "urak"};
-    private final String[] END = {"d", "ed", "ark", "arc", "es", "er", "der",
+    private static final String[] END = {"d", "ed", "ark", "arc", "es", "er", "der",
             "tron", "med", "ure", "zur", "cred", "mur"};
 
-    private Random rand = new Random();
+    private static Random rand = new Random();
 
     @Autowired
     private PersonRepository personRepository;
     @Autowired
     private DogRepository dogRepository;
 
-    private String generateName() {
+    public static String generateName() {
         return BEGINNING[rand.nextInt(BEGINNING.length)] +
                 MIDDLE[rand.nextInt(MIDDLE.length)] +
                 END[rand.nextInt(END.length)];
